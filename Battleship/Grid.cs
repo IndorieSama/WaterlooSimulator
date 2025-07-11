@@ -1,6 +1,7 @@
 namespace Battleship;
 
 using System.Collections.Generic;
+using System.Linq;
 
 public class Grid
 {
@@ -9,6 +10,8 @@ public class Grid
 
     public List<Ship> Ships { get; } = new();
     public int RemainingShipsCount => Ships.FindAll(s => !s.IsSunk).Count;
+    public List<Coordinate> MissedShots { get; } = new();
+
 
     public bool WasLastShipSunk { get; private set; }
 
@@ -116,5 +119,42 @@ public class Grid
             }
         }
     }
+    public void Display()
+    {
+        Console.WriteLine("\n   A B C D E F G H I J");
+        for (int y = 0; y < Height; y++)
+        {
+            Console.Write($"{y + 1,2} ");
+            for (int x = 0; x < Width; x++)
+            {
+                var coord = new Coordinate(x, y);
+                string symbol = "."; // par défaut : vide
+
+                bool isShip = false;
+                bool isHit = false;
+
+                foreach (var ship in Ships)
+                {
+                    if (ship.Positions.Any(p => p.X == x && p.Y == y))
+                    {
+                        isShip = true;
+
+                        if (ship.Hits.Any(h => h.X == x && h.Y == y))
+                        {
+                            isHit = true;
+                        }
+                    }
+                }
+
+                if (isShip && isHit) symbol = "X";   // touché
+                else if (MissedShots.Any(m => m.X == x && m.Y == y)) symbol = "~"; // raté
+
+                Console.Write($"{symbol} ");
+            }
+            Console.WriteLine();
+        }
+    }
+
+
 }
 
