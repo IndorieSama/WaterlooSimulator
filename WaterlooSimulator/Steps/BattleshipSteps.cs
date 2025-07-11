@@ -167,4 +167,28 @@ public class BattleshipSteps
         _lastShotResult = _game.Fire("A", "E2");
     }
 
+    [Then(@"un message d'erreur indique ""(.*)""")]
+    public void ThenUnMessageDerreurIndique(string expected)
+    {
+        Assert.Equal(expected, _game.LastErrorMessage);
+    }
+
+    [Then(@"c'est toujours au joueur A de jouer")]
+    public void ThenCestToujoursAuJoueurADeJouer()
+    {
+        Assert.Equal("A", _game.CurrentPlayer);
+    }
+
+    [When(@"le joueur A tire de nouveau en D(.*)")]
+    public void WhenLeJoueurATireDeNouveauEnD(int y)
+    {
+        _lastShotResult = _game.Fire("A", $"D{y}");
+    }
+
+    [Then(@"tous les bateaux sont placés correctement sur la grille")]
+    public void ThenTousLesBateauxSontPlacesCorrectementSurLaGrille()
+    {
+        var player = _game.Players.First(p => p.Name == "A");
+        Assert.Equal(_game.TotalShips, player.Grid.Ships.Count);
+    }
 }

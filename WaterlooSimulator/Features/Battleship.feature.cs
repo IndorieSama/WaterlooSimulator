@@ -225,14 +225,14 @@ namespace WaterlooSimulator.Features
             this.ScenarioCleanup();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Tirer et toucher un bateau")]
+        [Xunit.SkippableFactAttribute(DisplayName="Placer tous les bateaux requis")]
         [Xunit.TraitAttribute("FeatureTitle", "Gestion d\'une partie de Bataille Navale")]
-        [Xunit.TraitAttribute("Description", "Tirer et toucher un bateau")]
-        public virtual void TirerEtToucherUnBateau()
+        [Xunit.TraitAttribute("Description", "Placer tous les bateaux requis")]
+        public virtual void PlacerTousLesBateauxRequis()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Tirer et toucher un bateau", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Placer tous les bateaux requis", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 26
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -257,13 +257,110 @@ namespace WaterlooSimulator.Features
     this.FeatureBackground();
 #line hidden
 #line 27
-        testRunner.Given("le joueur B a un destroyer sur C5 à C7", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+        testRunner.When("le joueur A place un porte-avions de longueur 5 de A1 à A5", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 28
-        testRunner.When("le joueur A tire en C5", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+        testRunner.And("le joueur A place un croiseur de longueur 4 de B1 à B4", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 29
+        testRunner.And("le joueur A place un destroyer de longueur 3 de C1 à C3", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 30
+        testRunner.And("le joueur A place un sous-marin de longueur 3 de D1 à D3", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 31
+        testRunner.And("le joueur A place un patrouilleur de longueur 2 de E1 à E2", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 32
+        testRunner.Then("tous les bateaux sont placés correctement sur la grille", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.SkippableFactAttribute(DisplayName="Tirer et toucher un bateau")]
+        [Xunit.TraitAttribute("FeatureTitle", "Gestion d\'une partie de Bataille Navale")]
+        [Xunit.TraitAttribute("Description", "Tirer et toucher un bateau")]
+        public virtual void TirerEtToucherUnBateau()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Tirer et toucher un bateau", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 34
+    this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 7
+    this.FeatureBackground();
+#line hidden
+#line 35
+        testRunner.Given("le joueur B a un destroyer sur C5 à C7", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 36
+        testRunner.When("le joueur A tire en C5", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 37
         testRunner.Then("le tir est un \"Touché\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.SkippableFactAttribute(DisplayName="Tirer hors de la grille")]
+        [Xunit.TraitAttribute("FeatureTitle", "Gestion d\'une partie de Bataille Navale")]
+        [Xunit.TraitAttribute("Description", "Tirer hors de la grille")]
+        public virtual void TirerHorsDeLaGrille()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Tirer hors de la grille", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 39
+    this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 7
+    this.FeatureBackground();
+#line hidden
+#line 40
+        testRunner.When("le joueur A tire en K1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 41
+        testRunner.Then("un message d\'erreur indique \"Erreur: Hors grille\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 42
+        testRunner.And("c\'est toujours au joueur A de jouer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -277,7 +374,7 @@ namespace WaterlooSimulator.Features
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Tirer dans l\'eau", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 31
+#line 44
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -300,124 +397,27 @@ namespace WaterlooSimulator.Features
 #line 7
     this.FeatureBackground();
 #line hidden
-#line 32
+#line 45
         testRunner.Given("aucune case n\'est occupée en D4", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 33
+#line 46
         testRunner.When("le joueur A tire en D4", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 34
+#line 47
         testRunner.Then("le tir est un \"À l\'eau\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Couler un bateau")]
+        [Xunit.SkippableFactAttribute(DisplayName="Ne pas pouvoir tirer deux fois sur la même case")]
         [Xunit.TraitAttribute("FeatureTitle", "Gestion d\'une partie de Bataille Navale")]
-        [Xunit.TraitAttribute("Description", "Couler un bateau")]
-        public virtual void CoulerUnBateau()
+        [Xunit.TraitAttribute("Description", "Ne pas pouvoir tirer deux fois sur la même case")]
+        public virtual void NePasPouvoirTirerDeuxFoisSurLaMemeCase()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Couler un bateau", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 36
-    this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 7
-    this.FeatureBackground();
-#line hidden
-#line 37
-        testRunner.Given("le joueur B a un sous-marin sur E2 à E2", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 38
-        testRunner.When("le joueur A tire en E2", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 39
-        testRunner.Then("le sous-marin est coulé", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 40
-        testRunner.And("le joueur B a perdu un bateau", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [Xunit.SkippableFactAttribute(DisplayName="Le joueur rejoue après un tir réussi")]
-        [Xunit.TraitAttribute("FeatureTitle", "Gestion d\'une partie de Bataille Navale")]
-        [Xunit.TraitAttribute("Description", "Le joueur rejoue après un tir réussi")]
-        public virtual void LeJoueurRejoueApresUnTirReussi()
-        {
-            string[] tagsOfScenario = ((string[])(null));
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Le joueur rejoue après un tir réussi", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 42
-    this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 7
-    this.FeatureBackground();
-#line hidden
-#line 43
-        testRunner.Given("une partie en cours avec le joueur A et le joueur B", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 44
-        testRunner.And("le joueur B a un destroyer sur F5 à F7", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 45
-        testRunner.When("le joueur A tire en F5", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 46
-        testRunner.Then("le tir est un \"Touché\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 47
-        testRunner.And("le joueur A garde la main et peut tirer à nouveau", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [Xunit.SkippableFactAttribute(DisplayName="Le joueur passe son tour après un tir raté")]
-        [Xunit.TraitAttribute("FeatureTitle", "Gestion d\'une partie de Bataille Navale")]
-        [Xunit.TraitAttribute("Description", "Le joueur passe son tour après un tir raté")]
-        public virtual void LeJoueurPasseSonTourApresUnTirRate()
-        {
-            string[] tagsOfScenario = ((string[])(null));
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Le joueur passe son tour après un tir raté", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Ne pas pouvoir tirer deux fois sur la même case", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 49
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -442,33 +442,30 @@ namespace WaterlooSimulator.Features
     this.FeatureBackground();
 #line hidden
 #line 50
-        testRunner.Given("une partie en cours avec le joueur A et le joueur B", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+        testRunner.Given("le joueur B a un destroyer sur D5 à D7", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 51
-        testRunner.And("aucune case n\'est occupée en G8", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+        testRunner.When("le joueur A tire en D5", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 52
-        testRunner.When("le joueur A tire en G8", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+        testRunner.And("le joueur A tire de nouveau en D5", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 53
-        testRunner.Then("le tir est un \"À l\'eau\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 54
-        testRunner.And("le tour passe au joueur B", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+        testRunner.Then("un message d\'erreur indique \"Case déjà ciblée\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Gagner la partie")]
+        [Xunit.SkippableFactAttribute(DisplayName="Couler un bateau")]
         [Xunit.TraitAttribute("FeatureTitle", "Gestion d\'une partie de Bataille Navale")]
-        [Xunit.TraitAttribute("Description", "Gagner la partie")]
-        public virtual void GagnerLaPartie()
+        [Xunit.TraitAttribute("Description", "Couler un bateau")]
+        public virtual void CoulerUnBateau()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Gagner la partie", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 57
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Couler un bateau", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 55
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -491,13 +488,160 @@ namespace WaterlooSimulator.Features
 #line 7
     this.FeatureBackground();
 #line hidden
+#line 56
+        testRunner.Given("le joueur B a un sous-marin sur E2 à E2", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 57
+        testRunner.When("le joueur A tire en E2", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
 #line 58
-        testRunner.Given("le joueur B n’a plus de bateaux après le dernier tir", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+        testRunner.Then("le sous-marin est coulé", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 59
+        testRunner.And("le joueur B a perdu un bateau", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.SkippableFactAttribute(DisplayName="Le joueur rejoue après un tir réussi")]
+        [Xunit.TraitAttribute("FeatureTitle", "Gestion d\'une partie de Bataille Navale")]
+        [Xunit.TraitAttribute("Description", "Le joueur rejoue après un tir réussi")]
+        public virtual void LeJoueurRejoueApresUnTirReussi()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Le joueur rejoue après un tir réussi", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 61
+    this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 7
+    this.FeatureBackground();
+#line hidden
+#line 62
+        testRunner.Given("une partie en cours avec le joueur A et le joueur B", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 63
+        testRunner.And("le joueur B a un destroyer sur F5 à F7", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 64
+        testRunner.When("le joueur A tire en F5", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 65
+        testRunner.Then("le tir est un \"Touché\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 66
+        testRunner.And("le joueur A garde la main et peut tirer à nouveau", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.SkippableFactAttribute(DisplayName="Le joueur passe son tour après un tir raté")]
+        [Xunit.TraitAttribute("FeatureTitle", "Gestion d\'une partie de Bataille Navale")]
+        [Xunit.TraitAttribute("Description", "Le joueur passe son tour après un tir raté")]
+        public virtual void LeJoueurPasseSonTourApresUnTirRate()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Le joueur passe son tour après un tir raté", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 68
+    this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 7
+    this.FeatureBackground();
+#line hidden
+#line 69
+        testRunner.Given("une partie en cours avec le joueur A et le joueur B", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 70
+        testRunner.And("aucune case n\'est occupée en G8", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 71
+        testRunner.When("le joueur A tire en G8", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 72
+        testRunner.Then("le tir est un \"À l\'eau\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 73
+        testRunner.And("le tour passe au joueur B", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.SkippableFactAttribute(DisplayName="Gagner la partie")]
+        [Xunit.TraitAttribute("FeatureTitle", "Gestion d\'une partie de Bataille Navale")]
+        [Xunit.TraitAttribute("Description", "Gagner la partie")]
+        public virtual void GagnerLaPartie()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Gagner la partie", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 76
+    this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 7
+    this.FeatureBackground();
+#line hidden
+#line 77
+        testRunner.Given("le joueur B n’a plus de bateaux après le dernier tir", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 78
         testRunner.When("le joueur A tire et coule le dernier bateau", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 60
+#line 79
         testRunner.Then("le joueur A gagne la partie", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

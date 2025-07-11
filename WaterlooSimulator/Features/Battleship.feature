@@ -22,16 +22,35 @@ Afin de couler tous les bateaux ennemis et gagner la partie.
         And un joueur A
         When le joueur A tente de placer un porte-avions de longueur 5 de J8 à J12
         Then un message d'erreur indique que le bateau dépasse la grille
+        
+    Scenario: Placer tous les bateaux requis
+        When le joueur A place un porte-avions de longueur 5 de A1 à A5
+        And le joueur A place un croiseur de longueur 4 de B1 à B4
+        And le joueur A place un destroyer de longueur 3 de C1 à C3
+        And le joueur A place un sous-marin de longueur 3 de D1 à D3
+        And le joueur A place un patrouilleur de longueur 2 de E1 à E2
+        Then tous les bateaux sont placés correctement sur la grille
 
     Scenario: Tirer et toucher un bateau
         Given le joueur B a un destroyer sur C5 à C7
         When le joueur A tire en C5
         Then le tir est un "Touché"
+        
+    Scenario: Tirer hors de la grille
+        When le joueur A tire en K1
+        Then un message d'erreur indique "Erreur: Hors grille"
+        And c'est toujours au joueur A de jouer
 
     Scenario: Tirer dans l'eau
         Given aucune case n'est occupée en D4
         When le joueur A tire en D4
         Then le tir est un "À l'eau"
+        
+    Scenario: Ne pas pouvoir tirer deux fois sur la même case
+        Given le joueur B a un destroyer sur D5 à D7
+        When le joueur A tire en D5
+        And le joueur A tire de nouveau en D5
+        Then un message d'erreur indique "Case déjà ciblée"
 
     Scenario: Couler un bateau
         Given le joueur B a un sous-marin sur E2 à E2
