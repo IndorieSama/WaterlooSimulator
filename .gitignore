@@ -1,6 +1,73 @@
+# Build results
 bin/
 obj/
-/packages/
-riderModule.iml
-/_ReSharper.Caches/
-.idea
+
+# Rider project files
+.idea/
+*.sln.iml
+
+# User-specific files
+*.user
+*.userosscache
+*.suo
+*.userprefs
+
+# Rider caches
+.idea/
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/**/usage.statistics.xml
+.idea/**/dictionaries
+.idea/**/shelf
+
+# Rider local history
+.idea/.idea.*
+
+# Rider backup files
+*.bak
+
+# Rider logs
+*.log
+
+# Rider workspace
+.idea/workspace.xml
+.idea/tasks.xml
+
+# Resharper files
+_ReSharper*/
+
+# DotCover files
+*.dotCover
+
+# Coverlet coverage files
+coverage.*.json
+coverage*.xml
+coverage*.info
+
+# Visual Studio temporary files
+.vs/
+*.dbmdl
+
+# NuGet packages
+*.nupkg
+*.snupkg
+packages/
+
+# .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Rider generated files
+.idea/
+
+# Rider-specific folders
+.idea/
+
+# Others
+*.DS_Store
+*.exe
+*.dll
+*.pdb
+*.cache
+*.log
