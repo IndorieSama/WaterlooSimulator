@@ -6,6 +6,7 @@ Ce projet SpecFlow illustre la gestion de tests BDD pour une partie de bataille 
 
 ## 🗂️ Ce qui est inclus
 
+- **Terminal**: Possibilité de jouer à la bataille navale sur terminal
 - **Feature** : gestion complète de la partie (placement des bateaux, tirs, règles de victoire, erreurs).
 - **Step Definitions (`BattleshipSteps.cs`)** : implémentation C# pour lier les steps Gherkin au moteur de jeu `BattleshipGame`.
 
@@ -16,7 +17,7 @@ Ce projet SpecFlow illustre la gestion de tests BDD pour une partie de bataille 
 - **Lisibilité** : langage clair, scénarios auto-documentés.
 - **Données de test explicites** : coordonnées claires, bateaux nommés.
 - **Extensibilité** : facile d’ajouter de nouveaux scénarios ou bateaux.
-- **Langage ubiquitaire** : vocabulaire partagé joueur/métier/développeur.
+- **Langage ubiquitaire** : vocabulaire partagé couler/tirer/bateau, nommage des case (ex: A1).
 - **Réutilisabilité** : steps génériques, calcul automatique des longueurs, pas de duplication.
 
 ## ⚙️ Structure recommandée
@@ -39,9 +40,8 @@ Pour éviter l'erreur `[MSB4067] L'élément "#text" ... n'est pas reconnu` :
 ## 🚀 Lancer les tests
 
 1. Cloner le projet
-2. Restaurer les packages NuGet
 3. Exécuter les tests via `dotnet test` ou ton runner SpecFlow/IDE préféré.
 
 ---
 
-**Auteur** : *Ton Nom ou ton équipe*
+**Auteur** : Soheil BENABIDA et Lucas PIRES
